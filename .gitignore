@@ -2,5 +2,5 @@
 **/.vscode
 **/.angular
 **/.streamlit
-venv/
-.venv
+**/venv/
+
