@@ -16,10 +16,12 @@
 
       <div class="flex items-center gap-4">
         <div class="sm:flex sm:gap-4">
+          <p class="font-medium text-gray-900 px-5 py-2.5 dark:text-white">Welcome Back, {{ firstName }}!</p> 
           <a
             class="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow dark:hover:bg-teal-500"
             href="#"
             routerLink="/login"
+            (click)="showLogoutToast()"
           >
             Logout
           </a>
