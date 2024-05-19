@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Router, RouterModule } from '@angular/router';
 import { LoginService } from './login.service';
 import { HotToastService } from '@ngneat/hot-toast';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   fb = inject(FormBuilder)
   loginService = inject(LoginService)
   dataService = inject(DataService)
+  authService = inject(AuthService)
   toast = inject(HotToastService)
   router = inject(Router)
  
@@ -49,7 +51,8 @@ export class LoginComponent implements OnInit {
           password: response.password,
           username: response.username,
         }
-  
+        
+        this.authService.setToken(response.token);
         this.router.navigate(['/dashboard'])
       })
     }

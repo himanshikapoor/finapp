@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { CommonModule } from '@angular/common';
 import { SignupService } from './signup.service';
 
